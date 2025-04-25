@@ -1,0 +1,69 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px 16px;
+  }
+  button{
+    background-color: #15ebb9;
+    border:none;
+    border-radius: 7px;
+    padding: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: white;
+  }
+  
+  th {
+    background-color: #c8dfd9;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1ededd4;
+    transition: background-color 0.1s ease;
+  }
+  
+  h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #535252;
+    margin-bottom: 16px;
+  }
+  /* Conteneur principal */
+.continaire {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: #f5f5f5; /* fond clair du container */
+  padding: 16px;
+}
+
+/* En-tête */
+.header {
+  width: 100%;
+  height: 10vh;
+ /* background-color: rgb(145, 227, 230); /* tu peux changer ici : ex. #28a745 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

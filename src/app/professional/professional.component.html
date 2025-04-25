@@ -1,0 +1,57 @@
+<div class="header">
+    
+</div>
+  
+<div class="container">
+  <h2>Liste des Professionnels</h2>
+
+  <table border="1" cellpadding="8">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Localisation</th>
+        <th>Profession</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of professionals">
+        <td>{{ p.id }}</td>
+        <td>{{ p.fname || 'N/A' }}</td>
+        <td>{{ p.lname || 'N/A' }}</td>
+        <td>{{ p.email }}</td>
+        <td>{{ p.phone }}</td>
+        <td>{{ p.location }}</td>
+        <td>{{ p.profession }}</td>
+        <td>{{ p.description }}</td>
+        <td>
+          <button (click)="modifier(p)">Modi</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 🔧 Formulaire de modification -->
+  <div *ngIf="selectedProfessional" style="margin-top: 20px;">
+    <h3>Modifier le professionnel {{ selectedProfessional.id }}</h3>
+    <form (ngSubmit)="validerModification()">
+      <label>Prénom: <input [(ngModel)]="selectedProfessional.fname" name="fname" /></label><br />
+      <label>Nom: <input [(ngModel)]="selectedProfessional.lname" name="lname" /></label><br />
+      <label>Email: <input [(ngModel)]="selectedProfessional.email" name="email" /></label><br />
+      <label>Téléphone: <input [(ngModel)]="selectedProfessional.phone" name="phone" /></label><br />
+      <label>Localisation: <input [(ngModel)]="selectedProfessional.location" name="location" /></label><br />
+      <label>Profession: <input [(ngModel)]="selectedProfessional.profession" name="profession" /></label><br />
+      <label>Description: <input [(ngModel)]="selectedProfessional.description" name="description" /></label><br />
+      <button type="submit">Valider</button>
+      <button type="button" (click)="annuler()">Annuler</button>
+    </form>
+  </div>
+</div>
+
+ 
+  
