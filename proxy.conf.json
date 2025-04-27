@@ -1,0 +1,7 @@
+{
+  "/professionals": {
+    "target": "http://45.147.97.250:5080",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

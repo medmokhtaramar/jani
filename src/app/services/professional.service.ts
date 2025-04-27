@@ -4,15 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProfessionalService {
-  private apiUrl = 'http://localhost:8084/api/professionals'; // URL de ton API
+  private apiUrl = 'http://45.147.97.250:5080'; // URL de ton API
 
   constructor() {}
 
   // 🔹 GET : Tous les professionnels
   async getAllProfessionals(): Promise<any[]> {
     try {
-      const response = await fetch(`${this.apiUrl}/tous_professional`);
-      
+      const response = await fetch(`professionals`);
+
+
       if (!response.ok) {
         throw new Error('Failed to fetch professionals');
       }
@@ -27,7 +28,7 @@ export class ProfessionalService {
   // 🔹 GET : Par ID
   async getProfessionalById(id: number): Promise<any> {
     try {
-      const response = await fetch(`${this.apiUrl}/${id}`);
+      const response = await fetch(`professionals/${id}`);
 
       if (!response.ok) {
         throw new Error('Failed to fetch professional');
@@ -43,7 +44,7 @@ export class ProfessionalService {
   // 🔹 PUT : Mettre à jour un professionnel
   async updateProfessional(id: number, data: any): Promise<any> {
     try {
-      const response = await fetch(`${this.apiUrl}/${id}`, {
+      const response = await fetch(`professionals/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
